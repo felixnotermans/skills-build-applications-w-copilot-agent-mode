@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djongo',
     'corsheaders',
     'rest_framework',
     'octofit_tracker',
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': os.environ.get('MONGO_DB_NAME', 'octofit_tracker'),
+        'NAME': os.environ.get('MONGO_DB_NAME', 'octofit_db'),
         'CLIENT': {
             'host': os.environ.get('MONGO_URI', 'mongodb://localhost:27017'),
         },
