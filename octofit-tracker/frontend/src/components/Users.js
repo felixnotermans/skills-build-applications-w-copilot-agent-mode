@@ -6,6 +6,7 @@ function Users() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const endpointHint = '-8000.app.github.dev/api/users';
 
   const loadUsers = () => {
     setLoading(true);
@@ -14,6 +15,7 @@ function Users() {
     const endpoint = getApiEndpoint('users');
 
     console.log('[Users] REST API endpoint:', endpoint);
+    console.log('[Users] Codespace endpoint hint:', endpointHint);
 
     fetch(endpoint)
       .then((response) => response.json())

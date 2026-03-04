@@ -6,6 +6,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const endpointHint = '-8000.app.github.dev/api/activities';
 
   const loadActivities = () => {
     setLoading(true);
@@ -14,6 +15,7 @@ function Activities() {
     const endpoint = getApiEndpoint('activities');
 
     console.log('[Activities] REST API endpoint:', endpoint);
+    console.log('[Activities] Codespace endpoint hint:', endpointHint);
 
     fetch(endpoint)
       .then((response) => response.json())

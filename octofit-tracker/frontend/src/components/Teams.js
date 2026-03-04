@@ -6,6 +6,7 @@ function Teams() {
   const [teams, setTeams] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const endpointHint = '-8000.app.github.dev/api/teams';
 
   const loadTeams = () => {
     setLoading(true);
@@ -14,6 +15,7 @@ function Teams() {
     const endpoint = getApiEndpoint('teams');
 
     console.log('[Teams] REST API endpoint:', endpoint);
+    console.log('[Teams] Codespace endpoint hint:', endpointHint);
 
     fetch(endpoint)
       .then((response) => response.json())
